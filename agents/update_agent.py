@@ -1,4 +1,5 @@
 """Update Agent for managing code updates and documentation."""
+import os
 
 
 class UpdateAgent:
@@ -30,7 +31,6 @@ class UpdateAgent:
                 with open(file_path, "r", encoding="utf-8") as f:
                     code = f.read()
                 
-                import os
                 file_name = os.path.basename(file_path).replace(".py", "")
                 self.doc_agent.generate_doc(code, file_name)
                 count += 1
